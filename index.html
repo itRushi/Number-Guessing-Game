@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Guessing Game</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #9face6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px #333;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      width: 200px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #333;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎯 Number Guessing Game</h1>
+  <input type="number" id="guess" placeholder="Enter 1-10">
+  <button onclick="check()">Guess</button>
+  <p id="result"></p>
+
+  <script>
+    let number = Math.floor(Math.random() * 10) + 1;
+    function check() {
+      let guess = parseInt(document.getElementById("guess").value);
+      const result = document.getElementById("result");
+      if (guess === number) {
+        result.innerText = "🎉 Correct!";
+      } else {
+        result.innerText = "❌ Wrong, try again!";
+      }
+    }
+  </script>
+
+</body>
+</html>
